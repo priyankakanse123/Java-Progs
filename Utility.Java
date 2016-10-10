@@ -29,7 +29,7 @@ public int inputInteger()
 		try
 			{
 				//reads the inputString
-				return br.read();
+				return Integer.parseInt(br.readLine());
 			}
 		catch(IOException e)
 			{
@@ -89,6 +89,66 @@ public void writeFile(File file,String data){
 	catch(Exception e){
 		System.out.println(e);
 	}
+//input double
+	public double inputDouble(){
+		try{
+			return Double.parseDouble(br.readLine());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}new BufferedReader(new InputStreamReader(System.in));
+		return 0.0;
+	}
+
+
+	//input boolean
+	public boolean inputBoolean(){
+		try{
+			return Boolean.parseBoolean(br.readLine());
+		}
+		catch(Exception e){
+			System.out.println(e);
+		}
+		return false;
+	}
+//taking integer array input
+	public Integer[] inputIntArray(int size){
+		Integer array[] = new Integer[size];
+		for(int i=0;i<size;i++){
+			System.out.print("Please enter Element at "+(i+1)+" position: ");
+			array[i] = this.inputInteger();
+		}
+		return array;
+	}
+
+	//taking String array input
+	public String[] inputStringArray(int size){
+		String array[] = new String[size];
+		for(int i=0;i<size;i++){
+			System.out.print("Please enter String at "+(i+1)+" position: ");
+			array[i] = this.inputString();
+		}
+		return array;
+	}
+
+	//Array Printing(one dimentional) Generic type
+	public <T> void printArray(T[] inputArray){
+		for(T i:inputArray)
+			System.out.print(i+" ");
+
+		System.out.println();
+	}
+
+	//Array printing(two dimentional) Generic type
+public <T> void printArray(T[][] inputArray,int row,int column){
+for(int i=0;i<row;i++){
+			for(int j=0;j<column;j++){
+				System.out.print(inputArray[i][j]+" ");
+			}
+			System.out.println();
+		}
+}
+
 }
 }
  
